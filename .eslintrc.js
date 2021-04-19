@@ -24,5 +24,7 @@ module.exports = {
     ],
     // React
     'react/react-in-jsx-scope': 'off',
+    // typescript
+    '@typescript-eslint/no-non-null-assertion': 'off',
   },
 };
