@@ -24,6 +24,13 @@ module.exports = {
     ],
     // React
     'react/react-in-jsx-scope': 'off',
+    'react/self-closing-comp': [
+      'error',
+      {
+        component: true,
+        html: false,
+      },
+    ],
     // typescript
     '@typescript-eslint/no-non-null-assertion': 'off',
   },
