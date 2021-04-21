@@ -4,14 +4,10 @@ interface ICoinTypeToCoinMap {
   [propName: number]: string;
 }
 
-export const COIN_TYPE_MAP = {
-  [SYMBOL_MAP.BTC]: 0,
-  [SYMBOL_MAP.ETH]: 60,
-};
-
-export const COIN_TYPE_TO_COIN_MAP: ICoinTypeToCoinMap = {
+export const COIN_TYPE_TO_SYMBOL_MAP: ICoinTypeToCoinMap = {
   0: SYMBOL_MAP.BTC,
   60: SYMBOL_MAP.ETH,
+  195: SYMBOL_MAP.TRX,
 };
 
 export enum KeyringMethodEnum {

@@ -15,6 +15,7 @@
     "antd": "^4.15.2",
     "bip39": "^3.0.3",
     "bitcoinjs-lib": "^5.2.0",
+    "decredjs-lib": "^0.1.1",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
@@ -22,6 +23,7 @@
     "eslint-plugin-promise": "^4.3.1",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "ethereumjs-util": "^7.0.10",
     "ethereumjs-wallet": "^1.0.1",
     "mobx": "^6.2.0",
     "mobx-react": "^7.1.0",
@@ -31,6 +33,7 @@
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
     "typescript": "^4.1.2",
+    "unorm": "^1.6.0",
     "web-vitals": "^1.0.1"
   },
   "scripts": {

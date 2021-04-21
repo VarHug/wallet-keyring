@@ -7,6 +7,7 @@ import {
 } from '../../constants';
 import { getAccount as getBTCAccount } from './btc';
 import { getAccount as getETHAccount } from './eth';
+import { getAccount as getTRXAccount } from './trx';
 
 export interface KeyringInterface {
   [KeyringMethodEnum.GET_ACCOUNT]: GetAccountInterface;
@@ -18,6 +19,9 @@ const KEYRING_MAP = {
   },
   [SYMBOL_MAP.ETH]: {
     [KeyringMethodEnum.GET_ACCOUNT]: getETHAccount,
+  },
+  [SYMBOL_MAP.TRX]: {
+    [KeyringMethodEnum.GET_ACCOUNT]: getTRXAccount,
   },
 };
 
