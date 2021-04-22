@@ -5,14 +5,14 @@ import { useStores } from '../../../stores';
 import { COIN_TYPE_TO_SYMBOL_MAP } from '../../../constants';
 
 const Account: React.FC = () => {
-  const { derivationPathStore } = useStores();
-  const { path, pathString } = derivationPathStore;
+  const { converterFormStore } = useStores();
+  const { converterForm, derivationPath } = converterFormStore;
 
-  if (pathString === '') {
+  if (derivationPath === '') {
     return null;
   }
 
-  const { coinType } = path;
+  const { coinType } = converterForm;
   const symbol = COIN_TYPE_TO_SYMBOL_MAP[Number(coinType)];
 
   if (!symbol) {
@@ -21,7 +21,7 @@ const Account: React.FC = () => {
 
   const keyring = getKeyring(symbol);
   const words = 'abcdefgh';
-  const account = keyring.getAccount(words, pathString);
+  const account = keyring.getAccount(words, derivationPath);
 
   return <div>账户地址为：{account}</div>;
 };

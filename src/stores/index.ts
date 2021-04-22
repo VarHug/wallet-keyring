@@ -1,15 +1,12 @@
 import { createContext, useContext } from 'react';
-import {
-  DerivationPathStoreStore,
-  IDerivationPathStore,
-} from './DerivationPath';
+import { ConverterFormStore, IConverterFormStore } from './ConverterForm';
 
 interface IStores {
-  derivationPathStore: IDerivationPathStore;
+  converterFormStore: IConverterFormStore;
 }
 
 const stores = {} as IStores;
-stores.derivationPathStore = new DerivationPathStoreStore();
+stores.converterFormStore = new ConverterFormStore();
 
 const storesContext = createContext<IStores>(stores);
 

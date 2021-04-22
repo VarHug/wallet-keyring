@@ -1,6 +1,6 @@
-import { IPath } from '../types';
+import { IConverterForm } from '../types';
 
-export const defaultPath: IPath = {
+export const defaultConverterForm: IConverterForm = {
   purpose: 44,
   coinType: 60,
   account: 0,

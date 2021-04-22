@@ -3,14 +3,14 @@ import { observer } from 'mobx-react';
 import { useStores } from '../../../stores';
 
 const Path: React.FC = () => {
-  const { derivationPathStore } = useStores();
-  const { pathString } = derivationPathStore;
+  const { converterFormStore } = useStores();
+  const { derivationPath } = converterFormStore;
 
-  if (pathString === '') {
+  if (derivationPath === '') {
     return null;
   }
 
-  return <div>当前HDPath为: {pathString}</div>;
+  return <div>当前HDPath为: {derivationPath}</div>;
 };
 
 export default observer(Path);

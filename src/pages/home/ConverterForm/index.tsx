@@ -1,21 +1,21 @@
 import { Form } from 'antd';
 
-import { defaultPath } from '../../../config';
-import { IPath } from '../../../types';
+import { defaultConverterForm } from '../../../config';
+import { IConverterForm } from '../../../types';
 import { useStores } from '../../../stores';
 
 import DerivationPath from './DerivationPath';
 
 const ConverterForm: React.FC = () => {
-  const { derivationPathStore } = useStores();
-  const { setPath } = derivationPathStore;
+  const { converterFormStore } = useStores();
+  const { setPath } = converterFormStore;
 
-  const onFinish = (values: IPath): void => {
+  const onFinish = (values: IConverterForm): void => {
     setPath(values);
   };
 
   return (
-    <Form initialValues={defaultPath} onFinish={onFinish}>
+    <Form initialValues={defaultConverterForm} onFinish={onFinish}>
       <DerivationPath />
     </Form>
   );

@@ -1,4 +1,4 @@
-export interface IPath {
+export interface IConverterForm {
   purpose: string | number;
   coinType: string | number;
   account: string | number;
