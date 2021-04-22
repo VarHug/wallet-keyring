@@ -13,6 +13,7 @@ export interface IConverterFormStore {
 
 export class ConverterFormStore implements IConverterFormStore {
   converterForm: IConverterForm = {
+    mnemonic: '',
     purpose: '',
     coinType: '',
     account: '',

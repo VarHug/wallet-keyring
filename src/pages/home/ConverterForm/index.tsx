@@ -3,6 +3,7 @@ import { Form } from 'antd';
 import { defaultConverterForm } from '../../../config';
 import { useStores } from '../../../stores';
 
+import Mnemonic from './Mnemonic';
 import DerivationPath from './DerivationPath';
 
 const ConverterForm: React.FC = () => {
@@ -11,6 +12,7 @@ const ConverterForm: React.FC = () => {
 
   return (
     <Form initialValues={defaultConverterForm} onFinish={setConverterForm}>
+      <Mnemonic />
       <DerivationPath />
     </Form>
   );
