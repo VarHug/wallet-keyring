@@ -1,9 +1,4 @@
-import { Form } from 'antd';
 import { observer } from 'mobx-react';
-
-import { defaultPath } from '../../../config';
-import { IPath } from '../../../types';
-import { useStores } from '../../../stores';
 
 import PurposeInput from './PurposeInput';
 import CoinTypeInput from './CoinTypeInput';
@@ -12,28 +7,16 @@ import ChangeInput from './ChangeInput';
 import AddressIndexInput from './AddressIndexInput';
 import ConfirmButton from './ConfirmButton';
 
-const layout = {
-  // labelCol: { span: 8 },
-  // wrapperCol: { span: 16 },
-};
-
 const DerivationPath = (): React.ReactElement => {
-  const { derivationPathStore } = useStores();
-  const { setPath } = derivationPathStore;
-
-  const onFinish = (values: IPath) => {
-    setPath(values);
-  };
-
   return (
-    <Form {...layout} initialValues={defaultPath} onFinish={onFinish}>
+    <>
       <PurposeInput />
       <CoinTypeInput />
       <AccountInput />
       <ChangeInput />
       <AddressIndexInput />
       <ConfirmButton />
-    </Form>
+    </>
   );
 };
 
