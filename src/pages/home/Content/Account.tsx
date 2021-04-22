@@ -1,4 +1,5 @@
 import { observer } from 'mobx-react';
+import * as R from 'ramda';
 
 import { getKeyring } from '../../../utils';
 import { useStores } from '../../../stores';
@@ -8,7 +9,7 @@ const Account: React.FC = () => {
   const { converterFormStore } = useStores();
   const { converterForm, derivationPath } = converterFormStore;
 
-  if (derivationPath === '') {
+  if (R.isEmpty(derivationPath)) {
     return null;
   }
 

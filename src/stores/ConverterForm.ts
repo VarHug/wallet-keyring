@@ -1,4 +1,5 @@
 import { makeAutoObservable } from 'mobx';
+import * as R from 'ramda';
 
 import { IConverterForm } from '../types';
 
@@ -7,7 +8,7 @@ export interface IConverterFormStore {
 
   derivationPath: string;
 
-  setPath: (path: IConverterForm) => void;
+  setConverterForm: (converterForm: IConverterForm) => void;
 }
 
 export class ConverterFormStore implements IConverterFormStore {
@@ -24,9 +25,7 @@ export class ConverterFormStore implements IConverterFormStore {
   }
 
   get derivationPath(): string {
-    const isEmpty = Object.values(this.converterForm).every(
-      (item) => item === ''
-    );
+    const isEmpty = R.any(R.isEmpty, R.values(this.converterForm));
     if (isEmpty) {
       return '';
     }
@@ -40,7 +39,7 @@ export class ConverterFormStore implements IConverterFormStore {
     return `m/${purpose}'/${coinType}'/${account}'/${change}/${addressIndex}`;
   }
 
-  setPath(converterForm: IConverterForm): void {
+  setConverterForm(converterForm: IConverterForm): void {
     this.converterForm = converterForm;
   }
 }
