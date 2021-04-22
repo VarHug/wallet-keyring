@@ -17,12 +17,12 @@ const layout = {
   // wrapperCol: { span: 16 },
 };
 
-const Filter = (): React.ReactElement => {
-  const { hdPathStore } = useStores();
-  // const { setPath } = hdPathStore;
+const DerivationPath = (): React.ReactElement => {
+  const { derivationPathStore } = useStores();
+  const { setPath } = derivationPathStore;
 
   const onFinish = (values: IPath) => {
-    hdPathStore.setPath(values);
+    setPath(values);
   };
 
   return (
@@ -37,4 +37,4 @@ const Filter = (): React.ReactElement => {
   );
 };
 
-export default observer(Filter);
+export default observer(DerivationPath);

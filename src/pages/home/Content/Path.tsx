@@ -3,8 +3,8 @@ import { observer } from 'mobx-react';
 import { useStores } from '../../../stores';
 
 const Path: React.FC = () => {
-  const { hdPathStore } = useStores();
-  const { pathString } = hdPathStore;
+  const { derivationPathStore } = useStores();
+  const { pathString } = derivationPathStore;
 
   if (pathString === '') {
     return null;

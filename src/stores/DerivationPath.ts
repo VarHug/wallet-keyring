@@ -6,7 +6,7 @@ interface ISetPath {
   (path: IPath): void;
 }
 
-export interface IHDPathStore {
+export interface IDerivationPathStore {
   path: IPath;
 
   pathString: string;
@@ -14,7 +14,7 @@ export interface IHDPathStore {
   setPath: ISetPath;
 }
 
-export class HDPathStore implements IHDPathStore {
+export class DerivationPathStoreStore implements IDerivationPathStore {
   path: IPath = {
     purpose: '',
     coinType: '',
@@ -24,7 +24,7 @@ export class HDPathStore implements IHDPathStore {
   };
 
   constructor() {
-    makeAutoObservable(this);
+    makeAutoObservable(this, {}, { autoBind: true });
   }
 
   get pathString(): string {

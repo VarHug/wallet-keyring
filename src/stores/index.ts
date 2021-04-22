@@ -1,12 +1,15 @@
 import { createContext, useContext } from 'react';
-import { HDPathStore, IHDPathStore } from './HDPath';
+import {
+  DerivationPathStoreStore,
+  IDerivationPathStore,
+} from './DerivationPath';
 
 interface IStores {
-  hdPathStore: IHDPathStore;
+  derivationPathStore: IDerivationPathStore;
 }
 
 const stores = {} as IStores;
-stores.hdPathStore = new HDPathStore();
+stores.derivationPathStore = new DerivationPathStoreStore();
 
 const storesContext = createContext<IStores>(stores);
 

@@ -5,8 +5,8 @@ import { useStores } from '../../../stores';
 import { COIN_TYPE_TO_SYMBOL_MAP } from '../../../constants';
 
 const Account: React.FC = () => {
-  const { hdPathStore } = useStores();
-  const { path, pathString } = hdPathStore;
+  const { derivationPathStore } = useStores();
+  const { path, pathString } = derivationPathStore;
 
   if (pathString === '') {
     return null;
