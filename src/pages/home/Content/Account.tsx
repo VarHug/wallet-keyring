@@ -3,7 +3,6 @@ import * as R from 'ramda';
 
 import { getKeyring } from '../../../utils';
 import { useStores } from '../../../stores';
-import { COIN_TYPE_TO_SYMBOL_MAP } from '../../../constants';
 
 const Account: React.FC = () => {
   const { converterFormStore } = useStores();
@@ -13,12 +12,7 @@ const Account: React.FC = () => {
     return null;
   }
 
-  const { coinType, mnemonic } = converterForm;
-  const symbol = COIN_TYPE_TO_SYMBOL_MAP[Number(coinType)];
-
-  if (!symbol) {
-    return <div>不支持的CoinType</div>;
-  }
+  const { symbol, mnemonic } = converterForm;
 
   const keyring = getKeyring(symbol);
   const account = keyring.getAccount(mnemonic, derivationPath);
